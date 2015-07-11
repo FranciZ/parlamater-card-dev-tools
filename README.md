@@ -23,11 +23,16 @@ After installation you can run ```$ grunt serve``` to start the tasks required f
 
 
 #### HTML
-Work no the HTML takes place inside
+Work on the HTML takes place inside
 ```
 card/card.ejs
 ```
 
+#### JSON mocks data
+Mock data that simulates the API response is in 
+```
+card/data.json
+```
 
 #### S/CSS
 Work on the CSS for individual card takes place inside 
