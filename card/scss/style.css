@@ -1,0 +1,116 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,500&subset=latin,latin-ext);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:700);
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400; }
+
+h1 {
+  font-weight: 500; }
+
+.thin {
+  font-weight: 100; }
+
+body {
+  background-color: #f0f0f0; }
+
+.container {
+  max-width: 473px; }
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 970px; } }
+.card-container {
+  margin-top: 20px;
+  /* overriding bootstrap's padding */
+  margin-left: -9px;
+  margin-right: -9px;
+  height: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 0 20px;
+  overflow: hidden;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+  -khtml-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+  -ms-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+  -o-box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12); }
+
+.card-header, .card-footer {
+  width: 100%;
+  height: 80px;
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 20px; }
+
+.card-header .card-header-border, .card-footer .card-header-border {
+  height: 40px;
+  width: 3px;
+  background-image: url("../img/cardheaderborder.png");
+  margin-right: 13px;
+  float: left; }
+
+.card-header h1, .card-footer h1 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 40px; }
+
+.card-content {
+  width: 100%;
+  padding: 0;
+  margin: 0 0 10px 0; }
+
+.col-md-6 > .card-container .card-content {
+  height: 480px; }
+
+.card-placeholder {
+  background-color: #f0f0f0;
+  width: 100%;
+  height: 300px; }
+
+.card-footer {
+  height: 62px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  /* this background thing is a hack, still work TODO */
+  background-image: url("../img/shortline.png");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: 100%; }
+
+.card-circle-button {
+  width: 30px;
+  height: 30px;
+  display: block;
+  float: right;
+  margin-left: 8px;
+  -webkit-border-radius: 50%;
+  -khtml-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #197197;
+  font-family: 'Roboto Slab';
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 30px;
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer; }
+
+.card-embed {
+  font-size: 14px;
+  line-height: 28px; }
+
+.card-share {
+  background-image: url("../img/share.png");
+  background-repeat: no-repeat;
+  background-position: 4px 5.5px; }
+
+/*  */
+/* Your styles here */
+
+/*# sourceMappingURL=style.css.map */
