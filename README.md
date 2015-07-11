@@ -28,7 +28,7 @@ Work on the HTML takes place inside
 card/card.ejs
 ```
 
-#### JSON mocks data
+#### JSON mock data
 Mock data that simulates the API response is in 
 ```
 card/data.json
