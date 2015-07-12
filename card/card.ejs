@@ -7,6 +7,9 @@
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" data-remove="false" data-concat="false">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" data-remove="false" data-concat="false"></script>
+    <link rel="stylesheet" href="http://cdn.parlameter.si/libs/perfect-scrollbar/perfect-scrollbar.css" data-remove="false" data-concat="false">
+    <script src="http://cdn.parlameter.si/libs/perfect-scrollbar/perfect-scrollbar.js" data-remove="false" data-concat="false"></script>
+
 
     <!-- these are your (s)css and js files -->
     <link rel="stylesheet" href="scss/style.css" data-prefix="true">
@@ -29,10 +32,58 @@
                     <div class="card-header-border"></div>
                     <h1>Poslanec</h1> <!-- this text is the only thing you touch in .card-header -->
                 </div>
-                <div class="card-content">
-                    <p>Name : <%- name %></p>
-                    <p>Age : <%- age %></p>
-                    <p>Party: <%- party %></p>
+                <div class="card-content" id="recent-activity">
+
+                    <div id="scrollbar">
+
+
+                        <% for(var i=0;i<data.length;i++) {
+                            var day = data[i];
+                        %>
+
+                        <section>
+                            <span class="date"><%- day.date %></span>
+
+                            <ul>
+
+                                <% for(var j=0;j<day.events.length; j++){
+                                    var event = day.events[j];
+                                    var icon = '';
+                                %>
+                                <% if(event.type === 'ballot'){
+                                switch(event.option){
+                                    case 'Za':
+                                    icon = 'glyphicon-comment';
+                                    break;
+                                    case 'Proti':
+                                        icon = 'glyphicon-remove';
+                                        break;
+                                    case 'Ni':
+                                        icon = 'glyphicon-user';
+                                        break;
+                                }
+                                %>
+                                <li>
+                                    <span class="glyphicon <%- icon %>"></span>
+                                    <p>Glasoval/a <%- event.option %> <a href="#"><%- event.vote_name%></a></p>
+                                </li>
+                                <% } else if(event.type === 'speech') {%>
+                                <li>
+                                    <span class="glyphicon glyphicon-comment"></span>
+                                    <p><a href="#">Govoril/a</a> na <a href="#"><%- event.session_name %></a></p>
+                                </li>
+                                <% }  %>
+                                <% } %>
+
+
+                            </ul>
+
+                        </section>
+
+                        <% } %>
+
+                    </div>
+
                 </div>
                 <div class="card-footer">
                     <div class="card-circle-button card-share"></div>

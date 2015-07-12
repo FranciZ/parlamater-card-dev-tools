@@ -70,7 +70,7 @@ module.exports = function(grunt) {
                 dest: 'card/tmp',
                 expand: true,
                 ext: '.html',
-                options:jsonData
+                options:{data: jsonData}
             },
         },
         watch: {
@@ -205,7 +205,7 @@ module.exports = function(grunt) {
     grunt.registerTask('reload_data', 'Reload json data', function() {
 
         jsonData = JSON.parse(grunt.file.read('card/data.json'));
-        grunt.config(['ejs','all','options'], jsonData);
+        grunt.config(['ejs','all','options'], {data:jsonData});
 
     });
 
