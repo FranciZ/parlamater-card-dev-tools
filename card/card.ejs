@@ -18,84 +18,70 @@
 </head>
 
 <body onload="iframeResizePipe()">
-<iframe id="helpframe" src='' height='0' width='0' frameborder='0'></iframe>
+
 <!-- Livereload script for development only (stripped during dist build) -->
 <script src="http://localhost:35729/livereload.js" data-concat="false" data-remove="false"></script>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
 
-            <!-- everything above here is part of the page and not part of the card -->
-            <div class="card-container card-halfling">
-                <div class="card-header">
-                    <div class="card-header-border"></div>
-                    <h1>Poslanec</h1> <!-- this text is the only thing you touch in .card-header -->
-                </div>
-                <div class="card-content" id="recent-activity">
+    <!-- everything above here is part of the page and not part of the card -->
+    <div class="card-container card-halfling">
+        <div class="card-header">
+            <div class="card-header-border"></div>
+            <h1>Poslanec</h1> <!-- this text is the only thing you touch in .card-header -->
+        </div>
+        <div class="card-content" id="recent-activity">
 
-                    <div id="scrollbar">
-
-
-                        <% for(var i=0;i<data.length;i++) {
-                            var day = data[i];
+            <div id="scrollbar">
+                <% for(var i=0;i<data.length;i++) {
+                    var day = data[i];
+                %>
+                <section>
+                    <span class="date"><%- day.date %></span>
+                    <ul>
+                        <% for(var j=0;j<day.events.length; j++){
+                            var event = day.events[j];
+                            var icon = '';
                         %>
-
-                        <section>
-                            <span class="date"><%- day.date %></span>
-
-                            <ul>
-
-                                <% for(var j=0;j<day.events.length; j++){
-                                    var event = day.events[j];
-                                    var icon = '';
-                                %>
-                                <% if(event.type === 'ballot'){
-                                switch(event.option){
-                                    case 'Za':
-                                    icon = 'glyphicon-comment';
-                                    break;
-                                    case 'Proti':
-                                        icon = 'glyphicon-remove';
-                                        break;
-                                    case 'Ni':
-                                        icon = 'glyphicon-user';
-                                        break;
-                                }
-                                %>
-                                <li>
-                                    <span class="glyphicon <%- icon %>"></span>
-                                    <p>Glasoval/a <%- event.option %> <a href="#"><%- event.vote_name%></a></p>
-                                </li>
-                                <% } else if(event.type === 'speech') {%>
-                                <li>
-                                    <span class="glyphicon glyphicon-comment"></span>
-                                    <p><a href="#">Govoril/a</a> na <a href="#"><%- event.session_name %></a></p>
-                                </li>
-                                <% }  %>
-                                <% } %>
-
-
-                            </ul>
-
-                        </section>
-
+                        <% if(event.type === 'ballot'){
+                        switch(event.option){
+                            case 'Za':
+                            icon = 'glyphicon-comment';
+                            break;
+                            case 'Proti':
+                                icon = 'glyphicon-remove';
+                                break;
+                            case 'Ni':
+                                icon = 'glyphicon-user';
+                                break;
+                        }
+                        %>
+                        <li>
+                            <span class="glyphicon <%- icon %>"></span>
+                            <p>Glasoval/a <%- event.option %> <a href="#"><%- event.vote_name%></a></p>
+                        </li>
+                        <% } else if(event.type === 'speech') {%>
+                        <li>
+                            <span class="glyphicon glyphicon-comment"></span>
+                            <p><a href="#">Govoril/a</a> na <a href="#"><%- event.session_name %></a></p>
+                        </li>
+                        <% }  %>
                         <% } %>
-
-                    </div>
-
-                </div>
-                <div class="card-footer">
-                    <div class="card-circle-button card-share"></div>
-                    <div class="card-circle-button card-embed">&lt;/&gt;</div>
-                    <div class="card-circle-button card-info">i</div>
-                </div>
+                    </ul>
+                </section>
+                <% } %>
             </div>
-            <!-- everything below here is part of the page and not part of the card -->
 
         </div>
+        <div class="card-footer">
+            <div class="card-circle-button card-share"></div>
+            <div class="card-circle-button card-embed">&lt;/&gt;</div>
+            <div class="card-circle-button card-info">i</div>
+        </div>
     </div>
-</div>
+    <!-- everything below here is part of the page and not part of the card -->
+
+
+<iframe id="helpframe" src='' height='0' width='0' frameborder='0'></iframe>
 </body>
 
 </html>

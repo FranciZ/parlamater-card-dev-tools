@@ -3,6 +3,8 @@ $border-light : #f0f0f0;
 #recent-activity {
   color: $black;
 
+
+
   section {
     clear: both;
 
@@ -60,5 +62,11 @@ $border-light : #f0f0f0;
     }
 
   }
+
+}
+
+.card-content{
+
+  min-height:350px;
 
 }
